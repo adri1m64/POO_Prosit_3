@@ -1,5 +1,5 @@
 #include <iostream>
-#include "math.h"
+#include <math.h>
 #include "triangle.h"
 using namespace std;
 
@@ -12,8 +12,8 @@ double Triangle::Aire(Point p1, Point p2, Point p3){
     return aire;
 
     
-}
+};
 
 void Triangle::afficher() {
-    cout<<"L'aire du triangle est : " << aire << endl 
-}
+    cout<<"L'aire du triangle est : " << aire << endl ;
+};
