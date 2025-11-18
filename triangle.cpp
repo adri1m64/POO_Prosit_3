@@ -14,6 +14,6 @@ double Triangle::Aire(Point p1, Point p2, Point p3){
     
 }
 
-void Traingle::afficher() {
+void Triangle::afficher() {
     cout<<"L'aire du triangle est : " << aire << endl 
 }
