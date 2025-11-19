@@ -1,20 +1,22 @@
 #include "Point.h"
-#include <math.h>
+#include <cmath>
 
-double Point::getX(){
+double Point::getX() const {
     return x;
 }
-double Point::getY(){
+
+double Point::getY() const {
     return y;
 }
 
-void Point::setX(double x_){
+void Point::setX(double x_) {
     x = x_;
 }
-void Point::setY(double y_){
+
+void Point::setY(double y_) {
     y = y_;
 }
 
-double Point::distance(Point p2){
-    return sqrt((x-p2.x)*(x-p2.x)+(y-p2.y)*(y-p2.y));
+double Point::distance(Point autre) const {
+    return sqrt((x - autre.x) * (x - autre.x) + (y - autre.y) * (y - autre.y));
 }

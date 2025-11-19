@@ -3,23 +3,23 @@
 
 #include "FormeGeometrique.h"
 
-class Cercle : FormeGeometrique{
-    private:
+class Cercle : public FormeGeometrique {
+private:
     double rayon;
 
-    public:
-    Cercle(Point centre, double Rayon): FormeGeometrique(centre), rayon(Rayon) {}
+public:
+    Cercle(Point centre, double rayon_) : FormeGeometrique(centre), rayon(rayon_) {}
 
-    //getters
-    double getRayon();
+    // Getters
+    double getRayon() const;
 
-    //setters
+    // Setters
     void setRayon(double rayon_);
 
-    //Methods
-    double aire();
-    double perimetre();
-    void afficher();
+    // Méthodes override
+    double calculerAire() const override;
+    double calculerPerimetre() const override;
+    void afficher() const override;
 };
 
 #endif

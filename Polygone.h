@@ -2,20 +2,30 @@
 #define POLYGONE_H
 
 #include "FormeGeometrique.h"
+#include <vector>
 
+using namespace std;
 
-class Polygone : FormeGeometrique{
+class Polygone : public FormeGeometrique {
 protected:
-    Point* sommets;
+    vector<Point> sommets;
+
 public:
-    Polygone(Point* s) : FormeGeometrique(s[0]), sommets(s) {};
+    // Constructeur avec vector de points
+    Polygone(vector<Point> points) : FormeGeometrique(points[0]), sommets(points) {}
+    
+    virtual ~Polygone() {}
 
-    Point* getSommets();
-    int getNombreSommets();
+    // Getters
+    vector<Point> getSommets() const;
+    int getNombreSommets() const;
 
-    double perimetre();
-    double aire();
-    void afficher();
+    // Méthode concrète (non virtuelle pure)
+    double calculerPerimetre() const override;
+    
+    // Méthodes virtuelles pures (à implémenter dans les classes dérivées)
+    virtual double calculerAire() const = 0;
+    virtual void afficher() const = 0;
 };
 
 #endif

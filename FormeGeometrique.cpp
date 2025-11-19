@@ -1,12 +1,9 @@
-#include <iostream>
-
 #include "FormeGeometrique.h"
-#include "Point.h"
 
-Point FormeGeometrique::getPosition(){
+Point FormeGeometrique::getPosition() const {
     return position;
 }
 
-void FormeGeometrique::setPosition(Point pos){
+void FormeGeometrique::setPosition(Point pos) {
     position = pos;
-}
+}   

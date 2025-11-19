@@ -1,24 +1,27 @@
 #ifndef POINT_H
 #define POINT_H
 
-class Point{
-    private:
-        double x;
-        double y;
+class Point {
+private:
+    double x;
+    double y;
+
+public:
+    // Constructeur par défaut nécessaire pour vector
+    Point() : x(0), y(0) {}
     
-    public:
-        Point(double X, double Y): x(X), y(Y) {}
+    Point(double X, double Y) : x(X), y(Y) {}
 
-        //getters
-        double getX();
-        double getY();
+    // Getters
+    double getX() const;
+    double getY() const;
 
-        //setters
-        void setX(double x_);
-        void setY(double y_);
+    // Setters
+    void setX(double x_);
+    void setY(double y_);
 
-        //Methods
-        double distance(Point p2);
+    // Methods
+    double distance(Point autre) const;
 };
 
 #endif
